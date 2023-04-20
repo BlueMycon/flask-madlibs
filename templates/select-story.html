@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Madlibs! {% endblock %}
+
+{% block content %}
+
+<h1 class="pt-4 mb-3 text-center">Madlibs!</h1>
+<select name="story-select" id="select-story">
+  <option value="">Choose a Story!</option>
+  {% for story in stories %}
+  <option value="{{story}}">{{story}}</option>
+  {% endfor %}
+</select>
+
+<div id="questions-container"></div>
+
+<script src="https://unpkg.com/axios/dist/axios.js"></script>
+<script src="static/select-story.js"></script>
+
+{% endblock %}
+
