@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from flask_debugtoolbar import DebugToolbarExtension
 
-from stories import silly_story, excited_story, stories
+from stories import stories
 
 story_names = {story.story_name: story for story in stories}
 
@@ -34,6 +34,6 @@ def get_results(story_name):
 
     story = story_names[story_name]
     result_text = story.get_result_text(request.args)
-    
+
     return render_template("results.html", story=result_text)
 
